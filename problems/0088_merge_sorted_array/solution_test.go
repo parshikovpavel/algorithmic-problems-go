@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func Test_isValid(t *testing.T) {
+func TestMerge(t *testing.T) {
 	tests := []struct {
 		a        []int
 		m        int
