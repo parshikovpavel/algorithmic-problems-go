@@ -1,6 +1,6 @@
 module github.com/parshikovpavel/algorithmic-problems-go
 
-go 1.21
+go 1.27
 
 require github.com/stretchr/testify v1.7.0
 

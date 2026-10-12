@@ -1,22 +1,22 @@
 package _0020_valid_parentheses
 
 func isValidBraketSeq(input string) bool {
-	brakets := make(map[string]int)
+	var brackets int
 
 	for _, char := range input {
 		switch char {
 		case '(':
-			brakets["circle"]++
+			brackets++
 		case ')':
-			if brakets["circle"] <= 0 {
+			brackets--
+
+			if brackets < 0 {
 				return false
 			}
-
-			brakets["circle"]--
 		default:
 			return false
 		}
 	}
 
-	return brakets["circle"] == 0
+	return brackets == 0
 }

@@ -2,7 +2,7 @@
 
 ## Условие
 
-Дан список целых неповторяющихся чисел и целое число. Необходимо найти все пары в списке, сумма которых равна заданному числу. Перестановки `(i, j)` и `(j, i)` считаются одной и той же парой, нужно вывести только одну из них (любую).
+Дан список целых неповторяющихся чисел `nums []int ` и целое число `target`. Необходимо найти все пары в списке, сумма которых равна заданному числу. Перестановки `(i, j)` и `(j, i)` считаются одной и той же парой, нужно вывести только одну из них (любую).
 
 **Input**
 
@@ -16,7 +16,7 @@
 
 **Example 1:**
 
-```csharp
+```
 Input: [2, 4, 5, 3] 7
 Output: [ [2, 5], [4, 3] ]
 ```
@@ -27,6 +27,10 @@ Output: [ [2, 5], [4, 3] ]
 Input: [-5, 2, 12, 5] 7
 Output: [ [-5, 12], [2, 5] ]
 ```
+
+
+
+[Тесты](solution_test.go)
 
 
 
@@ -42,7 +46,7 @@ Output: [ [-5, 12], [2, 5] ]
 
 Проходимся по всем элементам `$nums[$i]` массива и пытаемся найти такой `$nums[$j]`, для которого `$nums[$i] + $nums[$j] === $target`. Достаточно перебирать только `$j > $i`. В этом случае перестановки проверяем единожды - вместо `(i, j)` и `(j, i)` - проверяем только `(i, j)`.
 
-[Реализация](Solution1.php):
+[Реализация](solution1.go):
 
 ```go
 func twoSum(nums []int, target int) (result [][2]int) {
@@ -59,40 +63,43 @@ func twoSum(nums []int, target int) (result [][2]int) {
 
 ```
 
-[Тесты](./../../tests/TwoSum/Solution1Test.php)
-
-TODO!!!
-
 
 
 ## Два прохода с Hashtable
 
 Алгоритм:
 
-- Построим *Hashtable* по *value*'s из `$nums`.  Это позволит сократить время поиска с *O(n)* до *O(1)*, при этом необходимо затратить *O(n)* памяти под *Hashtable* (*space-time trade-off*). 
-- Проходим по `$nums` и пытаемся найти в *Hashtable* такое *value*, которое дополняет `$nums[$i]` до `$target`, т.е. равное `$target - $nums[$i]`. Необходимо добавить проверку, что `$i !== $j`.
+- Построим *Hashtable* по *value*'s из `nums`.  Это позволит сократить время поиска с *O(n)* до *O(1)*, при этом необходимо затратить *O(n)* памяти под *Hashtable* (*space-time trade-off*). 
+- Проходим по `nums` и пытаемся найти в *Hashtable* такое *value*, которое дополняет `nums[i]` до `target`, т.е. равное `target - nums[i]`. 
+- Необходимо добавить проверку, что `i < j`, чтобы:
+  - пары не попадали в результат дважды
+  - одно и то же значение не могло быть посчитано дважды для суммы (`i == j`)
 
-[Реализация](Solution2.php):
 
-```php
-public function twoSum(array $nums, int $target): array
-{
-    $hashtable = [];
+[Реализация](solution2.go):
 
-    foreach ($nums as $key => $value) {
-        $hashtable[$value] = $key;
-    }
+```go
+func twoSum2(nums []int, target int) [][2]int {
+	hash := make(map[int]int, len(nums))
+	var res [][2]int
 
-    foreach ($nums as $key => $value) {
-        $complement = $target - $value;
-        if (isset($hashtable[$complement]) && $hashtable[$complement] !== $key) {
-            return [$key, $hashtable[$complement]];
-        }
-    }
+	for i, num := range nums {
+		hash[num] = i
+	}
+
+	for i, num := range nums {
+		if j, ok := hash[target-num]; ok {
+			if i < j {
+				res = append(res, [2]int{num, target - num})
+			}
+		}
+	}
+
+	return res
 }
 ```
 
-[Тесты](./../../tests/TwoSum/Solution2Test.php)
+
 
 ## Один проход с Hashtable
 
