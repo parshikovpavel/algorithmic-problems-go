@@ -4,6 +4,8 @@
 | :---: | --- | --- | :---: |
 | 0 | Валидность скобочной последовательности со скобками одного типа | [Description](problems/0000_valid_one_type_parentheses) | Easy |
 | 0 | [Яндекс: Делёж грибов](https://coderun.yandex.ru/selections/algorithm-training-september-2025/problems/mushroom-sharing) | [Description](problems/0000_mushroom_division) | Medium |
+| 0 | [Яндекс: Перестановка символов в пароле](https://coderun.yandex.ru/selections/algorithm-training-september-2025/problems/cybersecurity) | [Description](problems/0000_yandex_cybersecurity) | Medium |
+| 0 | [OZON: Перебор всех строк любой длины из фиксированного набора символов](https://www.youtube.com/watch?v=z2hdeFw6Q-U&t=2962s) | [Description](problems/0000_ozon_iterating_chars) | Medium |
 | <span id="1">1_av</span> | Two sum | [Description](problems/0001_av_two_sum) | Easy |
 | 2 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers) | [Description](problems/0002_add_two_numbers) | Medium |
 | 3 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/) | [Description](problems/0003_longest_substring_without_repeating_characters/description.md) | Medium |
