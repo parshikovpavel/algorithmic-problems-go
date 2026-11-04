@@ -11,8 +11,11 @@
 | 3 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/) | [Description](problems/0003_longest_substring_without_repeating_characters/description.md) | Medium |
 | <span id="20">20</span> | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses) | [Description](problems/0020_valid_parentheses) | Easy |
 | 46 | [Permutations](https://leetcode.com/problems/permutations/) | [Description](problems/0046_permutations) | Medium |
+| 62 | [Unique Paths](https://leetcode.com/problems/unique-paths/editorial/) | [Description](problems/0062_unique_paths) | Medium |
+| 77 | [Combinations](https://leetcode.com/problems/combinations/description/) | [Description](problems/0077_combinations) | Medium |
 | 88 | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) | [Description](problems/0088_merge_sorted_array) | Easy |
 | 88_av | Merge Sorted Array | [Description](problems/0088_av_merge_sorted_array) | Easy |
+| 746 | [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/) | [Description](problems/0746_min_cost_climbing_stairs) | Easy |
 | 1079 | [Letter Tile Possibilities](https://leetcode.com/problems/letter-tile-possibilities/) |  |  |
 
 
